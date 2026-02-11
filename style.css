@@ -1,0 +1,107 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f4f6f9;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Layout */
+.main-container {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Form Section */
+.form-section {
+    width: 300px;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: rgb(156, 2, 156);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: rgb(86, 5, 121);
+}
+
+/* Cards Section */
+.cards-section {
+    width: 520px;
+}
+
+/* Two column layout */
+#eventContainer {
+    column-count: 2;
+    column-gap: 20px;
+}
+
+/* Card Style */
+.card {
+    background: white;
+    padding: 12px;
+    border-left: 4px solid rgb(75, 4, 75);
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(211, 4, 4, 0.747);
+    margin-bottom: 15px;
+    break-inside: avoid;
+    position: relative;
+    font-size: 14px;
+}
+
+/* Delete button */
+
+.top-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+#clearAll {
+    background: crimson;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+    padding: 8px 16px;
+    display: block;
+    margin: 15px auto;
+
+}
+
+#clearAll:hover {
+    background: darkred;
+}
+.btn-container {
+    text-align: right;
+}
