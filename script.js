@@ -1,9 +1,14 @@
-const form = document.getElementById("eventForm");
-const container = document.getElementById("eventContainer");
-const clearBtn = document.getElementById("clearAll");
+const eventForm = document.getElementById("eventForm");
+const eventContainer = document.getElementById("eventContainer");
+const clearAllBtn = document.getElementById("clearAll");
 
-// Handle form submission
-form.addEventListener("submit", function (e) {
+let events = JSON.parse(localStorage.getItem("events")) || [];
+
+// Load events when page loads
+document.addEventListener("DOMContentLoaded", renderEvents);
+
+// Add Event
+eventForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
     const name = document.getElementById("eventName").value;
@@ -11,34 +16,51 @@ form.addEventListener("submit", function (e) {
     const category = document.getElementById("category").value;
     const description = document.getElementById("description").value;
 
-    const card = document.createElement("div");
-    card.classList.add("card");
+    const newEvent = {
+        id: Date.now(),
+        name,
+        date,
+        category,
+        description
+    };
 
-    card.innerHTML = `
-        <h3>${name}</h3>
-        <p><strong>Date:</strong> ${date}</p>
-        <p><strong>Category:</strong> ${category}</p>
-        <p>${description}</p>
-        <span class="delete-btn">❌</span>
-    `;
+    events.push(newEvent);
+    localStorage.setItem("events", JSON.stringify(events));
 
-    container.appendChild(card);
-    form.reset();
+    renderEvents();
+    eventForm.reset();
 });
 
-// Event Delegation (Delete)
-container.addEventListener("click", function (e) {
-    if (e.target.classList.contains("delete-btn")) {
-        e.target.parentElement.remove();
-    }
+// Render Events
+function renderEvents() {
+    eventContainer.innerHTML = "";
+
+    events.forEach(event => {
+        const card = document.createElement("div");
+        card.classList.add("event-card");
+
+        card.innerHTML = `
+            <span class="category ${event.category}">${event.category}</span>
+            <button class="delete-btn" onclick="deleteEvent(${event.id})">Delete</button>
+            <h3>${event.name}</h3>
+            <p><strong>Date:</strong> ${event.date}</p>
+            <p>${event.description}</p>
+        `;
+
+        eventContainer.appendChild(card);
+    });
+}
+
+// Delete Single Event
+function deleteEvent(id) {
+    events = events.filter(event => event.id !== id);
+    localStorage.setItem("events", JSON.stringify(events));
+    renderEvents();
+}
+
+// Clear All Events
+clearAllBtn.addEventListener("click", function () {
+    events = [];
+    localStorage.removeItem("events");
+    renderEvents();
 });
-
-// Clear All Button
-clearBtn.addEventListener("click", function () {
-    if (container.children.length === 0) {
-        alert("No events to clear!");
-        return;
-    }
-
-    container.innerHTML = "";
-}); 
