@@ -1,0 +1,147 @@
+body{
+font-family:Segoe UI;
+background:#020617;   /* very dark background */
+margin:0;
+padding:30px;
+color:#e2e8f0;
+}
+
+h1{
+text-align:center;
+margin-bottom:30px;
+color:white;
+}
+
+.dashboard{
+display:flex;
+gap:25px;
+}
+
+/* ALL THREE BOXES */
+.box{
+background:#111827;   /* lighter than page background */
+border-radius:18px;
+padding:25px;
+box-shadow:0 8px 20px rgba(0,0,0,0.7);
+}
+
+/* LEFT BOX */
+.form-box{
+width:30%;
+}
+
+/* RIGHT BOX */
+.event-box{
+flex:1;
+}
+
+/* BOTTOM BOX */
+.stats-box{
+margin-top:25px;
+}
+
+/* INPUT FIELDS */
+input{
+width:100%;
+padding:12px;
+margin-top:12px;
+border-radius:8px;
+border:1px solid #374151;
+background:#020617;
+color:white;
+}
+
+input::placeholder{
+color:#9ca3af;
+}
+
+/* CREATE BUTTON */
+button{
+margin-top:15px;
+padding:12px;
+width:100%;
+border:none;
+border-radius:8px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+font-weight:600;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+/* EVENT CARD */
+.event-card{
+background:#020617;
+border-left:4px solid #2563eb;
+padding:15px;
+margin-top:12px;
+border-radius:10px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+transition:0.2s;
+}
+
+.event-card:hover{
+transform:scale(1.03);
+background:#0f172a;
+}
+
+/* HIGHLIGHT */
+.highlight{
+background:#78350f;
+}
+
+/* BUTTONS */
+.delete-btn{
+background:#dc2626;
+color:white;
+border:none;
+padding:6px 10px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.highlight-btn{
+background:#f59e0b;
+color:white;
+border:none;
+padding:6px 10px;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* STATS SECTION */
+.stats{
+display:flex;
+justify-content:space-around;
+margin-top:15px;
+}
+body{
+font-family:'Poppins', sans-serif;
+background:#020617;
+margin:0;
+padding:30px;
+color:#132c4b;
+}
+h1{
+font-weight:600;
+letter-spacing:1px;
+}
+
+h2{
+font-weight:500;
+margin-bottom:15px;
+}
+
+.event-card strong{
+font-weight:500;
+font-size:16px;
+}
+.event-card span{
+font-size:14px;
+color:#9ca3af;
+}

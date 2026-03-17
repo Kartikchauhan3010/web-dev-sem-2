@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart Event Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<h1>Smart Event Dashboard</h1>
+
+<div class="dashboard">
+
+<div class="box form-box">
+
+<h2>Create Event</h2>
+
+<input type="text" id="eventName" placeholder="Event Name">
+
+<input type="date" id="eventDate">
+
+<input type="text" id="eventLocation" placeholder="Location">
+
+<button id="createEvent">Create Event</button>
+
+</div>
+
+
+<div class="box event-box">
+
+<h2>Event List</h2>
+
+<div id="eventContainer"></div>
+
+</div>
+
+</div>
+
+
+<div class="box stats-box">
+
+<h2>Event Statistics</h2>
+
+<div class="stats">
+
+<div>
+<h3>Total Events</h3>
+<p id="totalEvents">0</p>
+</div>
+
+<div>
+<h3>Highlighted</h3>
+<p id="highlightEvents">0</p>
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
